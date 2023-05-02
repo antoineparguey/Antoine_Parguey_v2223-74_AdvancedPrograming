@@ -1,0 +1,47 @@
+﻿@page
+@model WebApplication1.Pages.subscribers.conectModel
+@{
+}
+
+
+<br />
+
+@if (Model.echec.Length > 0)
+{
+    <p>@Model.echec</p>
+}
+@if (Model.reussi.Length > 0)
+{
+    <p>@Model.reussi</p>
+}
+
+@if (conectModel.conected == true)
+{
+   <Button class="btn btn-primary btn-sm" id="ButtonDisconect" onclick="disconect_Click">Disconect</Button>
+    <a class='btn btn-primary btn-sm' href='/subscribers/client'>View list subscribers</a>
+}
+
+<h2> Connect</h2>
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Passworld</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="passworld" value="" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">conect</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class='btn btn-primary btn-sm' href='/subscribers/create'>Create an account</a>
+        </div>
+    </div>
+</form>

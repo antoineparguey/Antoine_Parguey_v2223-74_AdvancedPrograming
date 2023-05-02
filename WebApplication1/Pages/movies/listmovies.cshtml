@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplication1.Pages.movies.listmoviesModel
+@{
+}
+<br />
+<h2>redaction's favorit movies</h2>
+@if (subscribers.conectModel.conected == true) { 
+<a class='btn btn-primary btn-sm' href='/movies/CreateFilm'>New Film</a>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Title</th>
+            <th>Actors</th>
+            <th>Director</th>
+            <th>Release Date</th>
+            <th>Average grade</th>
+            <th>More Information</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in listmoviesModel.listedesfilfm)
+        {
+        <tr>
+
+
+            <td>@item.title</td>
+            <td>@item.acteur</td>
+            <td>@item.realisateur</td>
+            <td>@item.datesortie</td>
+            <td>@item.notes</td>
+            <td>
+
+                <a class="btn btn-primary btn-dark" href="/movies/info?index=@listmoviesModel.listedesfilfm.IndexOf(item)"> More Information</a>
+            </td>
+
+
+        </tr>
+        }
+
+    </tbody>
+    
+</table>

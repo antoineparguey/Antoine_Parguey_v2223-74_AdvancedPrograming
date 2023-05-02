@@ -1,0 +1,57 @@
+﻿@page
+@model WebApplication1.Pages.movies.infoModel
+@{
+}
+
+<br />
+<h2>Information about the Film</h2>
+<br />
+<p>Title:           @listmoviesModel.listedesfilfm[infoModel.Idexf].title </p>
+<p>Actor:           @listmoviesModel.listedesfilfm[infoModel.Idexf].acteur </p>
+<p>Director:        @listmoviesModel.listedesfilfm[infoModel.Idexf].realisateur </p>
+<p>Date of release: @listmoviesModel.listedesfilfm[infoModel.Idexf].datesortie </p>
+<p>Average grade:   @listmoviesModel.listedesfilfm[infoModel.Idexf].notes </p>
+<p>Comments:        @listmoviesModel.listedesfilfm[infoModel.Idexf].commentaire </p>
+<p>Press' Comment:  @listmoviesModel.listedesfilfm[infoModel.Idexf].commentairepresse </p>
+<p>Summary:         @listmoviesModel.listedesfilfm[infoModel.Idexf].resume </p>
+<br />
+
+<p>Add a comment and a grade </p>
+<br />
+@if (Model.ec.Length > 0)
+{
+    <p>@Model.ec</p>
+}
+@if (subscribers.conectModel.conected == true)
+{
+    <form method="post">
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Grade</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="grade" value="" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">comment</label>
+            <div class="col-sm-6">
+
+                <textarea id="comment" name="comment" rows="7" cols="75" value=""></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <button type="submit" class="btn btn-primary">Add comment and grade</button>
+            </div>
+
+        </div>
+
+
+    </form>
+}
+
+<div class="col-sm-3 d-grid">
+    <a class='btn btn-primary btn-sm' href='/movies/listmovies'>Back</a>
+</div>

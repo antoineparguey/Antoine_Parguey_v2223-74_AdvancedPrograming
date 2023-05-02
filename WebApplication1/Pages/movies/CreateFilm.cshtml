@@ -1,0 +1,59 @@
+﻿@page
+@model WebApplication1.Pages.movies.CreateFilmModel
+@{
+}
+
+
+<br />
+<h2> Add a movie</h2>
+
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Title</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="title" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Acteurs</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="acteurs" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Director</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="director" value="" />
+        </div>
+    </div>
+    
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Release Date</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="drelease" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Summary</label>
+        <div class="col-sm-6">
+            
+            <textarea id="summary" name="summary" rows="7" cols="75" value=""></textarea>
+        </div>
+    </div>
+
+    
+
+   
+
+    <div class="mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Add the film</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class='btn btn-primary btn-sm' href='/movies/listmovies'>Back</a>
+        </div>
+    </div>
+
+
+</form>

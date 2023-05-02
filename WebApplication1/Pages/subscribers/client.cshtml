@@ -1,0 +1,45 @@
+﻿@page
+@model WebApplication1.Pages.clientModel
+@{
+}
+
+
+<br />
+<h2>Liste des clients</h2>
+
+<a class='btn btn-primary btn-sm' href ='/subscribers/create'>New Client</a>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Name</th>
+            <th>passworld</th>
+            <th>age</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone</th>
+
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in clientModel.listSubscriber)
+        {
+            <tr>
+
+
+                <td>@item.name</td>
+                <td>@item.passworld</td>
+                <td>@item.age</td>
+                <td>@item.address</td>
+                <td>@item.email</td>
+                <td>@item.phone</td>
+
+                
+            </tr>
+        }
+
+    </tbody>
+    <a class='btn btn-primary btn-sm' href='/subscribers/conect'>Back</a>
+</table>
